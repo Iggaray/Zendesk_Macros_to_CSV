@@ -53,12 +53,11 @@ def update_macros(user, token, output_file='macros_principal.csv'):
     for df in lista_dfs:
       df.dropna(subset=['title'], inplace=True) 
       formatear_columna_html_a_text(df)
-      print('nuevo parseo')
     
     df_concatenado = pd.concat(lista_dfs, axis=0)
     
     # guardo el df en formato csv
-    df_concatenado.to_csv(os.path.join('.', output_file))
+    df_concatenado.to_csv(output_file)
     return df_concatenado
     
 
